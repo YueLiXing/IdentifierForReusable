@@ -36,39 +36,81 @@ IdentifierForReusableCode
 
 @implementation UITableView (IdentifierForReusable)
 
-- (void)registerCellClass:(Class)cellClass {
+- (void)checkCellClass:(Class)cellClass {
     NSAssert(cellClass, @"cellClass 不可为空");
     NSAssert([cellClass isSubclassOfClass:[UITableViewCell class]], @"cellClass 必须是 UITableViewCell的子类");
     NSAssert([cellClass instancesRespondToSelector:@selector(identifierForReusable)], @"cellClass 必须实现identifierForReusable");
-    [self registerClass:cellClass forCellReuseIdentifier:[cellClass identifierForReusable]];
 }
-- (void)registerHeaderFooterClass:(Class)aClass {
+
+- (void)checkHeaderFooterViewWithClass:(Class)aClass {
     NSAssert(aClass, @"aClass 不可为空");
     NSAssert([aClass isSubclassOfClass:[UITableViewHeaderFooterView class]], @"class 必须是 UITableViewHeaderFooterView的子类");
     NSAssert([aClass instancesRespondToSelector:@selector(identifierForReusable)], @"cellClass 必须实现identifierForReusable");
+}
+
+
+- (void)registerCellClass:(Class)cellClass {
+    [self checkCellClass:cellClass];
+    [self registerClass:cellClass forCellReuseIdentifier:[cellClass identifierForReusable]];
+}
+- (void)registerHeaderFooterClass:(Class)aClass {
+    [self checkHeaderFooterViewWithClass:aClass];
     [self registerClass:aClass forHeaderFooterViewReuseIdentifier:[aClass identifierForReusable]];
 }
+
+- (nullable __kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass {
+    [self checkCellClass:cellClass];
+    return [self dequeueReusableCellWithIdentifier:[cellClass identifierForReusable]];
+}
+- (__kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath {
+    [self checkCellClass:cellClass];
+    NSAssert(indexPath, @"indexPath 不可为空");
+    return [self dequeueReusableCellWithIdentifier:[cellClass identifierForReusable] forIndexPath:indexPath];
+}
+- (nullable __kindof UITableViewHeaderFooterView *)dequeueReusableHeaderFooterViewWithClass:(Class)aClass {
+    [self checkHeaderFooterViewWithClass:aClass];
+    return [self dequeueReusableHeaderFooterViewWithIdentifier:[aClass identifierForReusable]];
+}
+
 
 @end
 
 
 @implementation UICollectionView (IdentifierForReusable)
 
-- (void)registerClass:(Class)cellClass {
+- (void)checkCellClass:(Class)cellClass {
     NSAssert(cellClass, @"cellClass 不可为空");
     NSAssert([cellClass isSubclassOfClass:[UICollectionViewCell class]], @"cellClass 必须是 UICollectionViewCell的子类");
     NSAssert([cellClass instancesRespondToSelector:@selector(identifierForReusable)], @"cellClass 必须实现identifierForReusable");
+}
+
+- (void)checkSupplementaryViewClass:(Class)aClass Kind:(NSString *)kind {
+    NSAssert(aClass, @"aClass 不可为空");
+    NSAssert(kind, @"kind 不可为空");
+    NSAssert([kind isKindOfClass:[NSString class]], @"kind 必须为 NSString");
+    NSAssert([aClass isSubclassOfClass:[UICollectionReusableView class]], @"cellClass 必须是 UICollectionReusableView的子类");
+    NSAssert([aClass instancesRespondToSelector:@selector(identifierForReusable)], @"cellClass 必须实现identifierForReusable");
+}
+
+
+
+- (void)registerClass:(Class)cellClass {
+    [self checkCellClass:cellClass];
     [self registerClass:cellClass forCellWithReuseIdentifier:[cellClass identifierForReusable]];
 }
 
 - (void)registerClass:(Class)aClass forSupplementaryViewOfKind:(NSString *)kind {
-    NSAssert(aClass, @"aClass 不可为空");
-    NSAssert(kind, @"kind 不可为空");
-    NSAssert([aClass isSubclassOfClass:[UICollectionReusableView class]], @"cellClass 必须是 UICollectionReusableView的子类");
-    NSAssert([aClass instancesRespondToSelector:@selector(identifierForReusable)], @"cellClass 必须实现identifierForReusable");
+    [self checkSupplementaryViewClass:aClass Kind:kind];
     [self registerClass:aClass forSupplementaryViewOfKind:kind withReuseIdentifier:[aClass identifierForReusable]];
 }
 
-
+- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseClass:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath {
+    [self checkCellClass:cellClass];
+    return [self dequeueReusableCellWithReuseIdentifier:[cellClass identifierForReusable] forIndexPath:indexPath];
+}
+- (__kindof UICollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(NSString *)elementKind withReuseClass:(Class)aClass forIndexPath:(NSIndexPath *)indexPath {
+    [self checkSupplementaryViewClass:aClass Kind:elementKind];
+    return [self dequeueReusableSupplementaryViewOfKind:elementKind withReuseIdentifier:[aClass identifierForReusable] forIndexPath:indexPath];
+}
 
 @end

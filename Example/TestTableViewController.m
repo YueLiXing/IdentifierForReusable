@@ -89,11 +89,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListModel * model = self.dataArray[indexPath.row];
     if (model.isRed) {
-        RedTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[RedTableViewCell identifierForReusable] forIndexPath:indexPath];
+//        RedTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[RedTableViewCell identifierForReusable] forIndexPath:indexPath];
+//        RedTableViewCell * cell = [tableView dequeueReusableCellWithClass:[RedTableViewCell class]];
+        RedTableViewCell * cell = [tableView dequeueReusableCellWithClass:[RedTableViewCell class] forIndexPath:indexPath];
         cell.string = model.title;
         return cell;
     } else {
-        GreenTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[GreenTableViewCell identifierForReusable] forIndexPath:indexPath];
+//        GreenTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[GreenTableViewCell identifierForReusable] forIndexPath:indexPath];
+//        GreenTableViewCell * cell = [tableView dequeueReusableCellWithClass:[GreenTableViewCell class]];
+        GreenTableViewCell * cell = [tableView dequeueReusableCellWithClass:[GreenTableViewCell class] forIndexPath:indexPath];
         cell.string = model.title;
         return cell;
     }
@@ -112,7 +116,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    SectionHeaderView * headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:[SectionHeaderView identifierForReusable]];
+//    SectionHeaderView * headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:[SectionHeaderView identifierForReusable]];
+    SectionHeaderView * headerView = [tableView dequeueReusableHeaderFooterViewWithClass:[SectionHeaderView class]];
     headerView.title = @"《回首》  席慕容";
     return headerView;
 }

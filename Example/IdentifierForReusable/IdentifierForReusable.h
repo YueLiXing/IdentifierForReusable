@@ -43,6 +43,12 @@ IdentifierForReusableHeaderCode
  */
 - (void)registerHeaderFooterClass:(Class)aClass;
 
+- (__kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass;
+
+- (__kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath;
+
+- (__kindof UITableViewHeaderFooterView *)dequeueReusableHeaderFooterViewWithClass:(Class)aClass;
+
 @end
 
 
@@ -55,5 +61,17 @@ IdentifierForReusableHeaderCode
  使用类名注册 Header Footer
  */
 - (void)registerClass:(Class)aClass forSupplementaryViewOfKind:(NSString *)kind;
+
+/**
+ 获取 cell
+
+ @param cellClass cell 的 class
+ */
+- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseClass:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ 获取 UICollectionReusableView
+ */
+- (__kindof UICollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(NSString *)elementKind withReuseClass:(Class)aClass forIndexPath:(NSIndexPath *)indexPath;
 
 @end
