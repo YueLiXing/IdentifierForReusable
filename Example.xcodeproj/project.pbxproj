@@ -12,7 +12,6 @@
 		CD1B7B3E1DED72AD00DBD499 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B3D1DED72AD00DBD499 /* ViewController.m */; };
 		CD1B7B431DED72AD00DBD499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1B7B421DED72AD00DBD499 /* Assets.xcassets */; };
 		CD1B7B461DED72AD00DBD499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1B7B441DED72AD00DBD499 /* LaunchScreen.storyboard */; };
-		CD1B7B501DED72DF00DBD499 /* IdentifierForReusable.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B4F1DED72DF00DBD499 /* IdentifierForReusable.m */; };
 		CD1B7B531DED731800DBD499 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B521DED731800DBD499 /* TestTableViewController.m */; };
 		CD1B7B561DED732200DBD499 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B551DED732200DBD499 /* TestCollectionViewController.m */; };
 		CD1B7B5E1DED76B500DBD499 /* RedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B5D1DED76B500DBD499 /* RedTableViewCell.m */; };
@@ -22,6 +21,7 @@
 		CD1B7B6B1DED76FD00DBD499 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B6A1DED76FD00DBD499 /* CollectionViewCell.m */; };
 		CD1B7B6E1DED771700DBD499 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B6D1DED771700DBD499 /* HeaderCollectionReusableView.m */; };
 		CD1B7B711DED772100DBD499 /* FooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1B7B701DED772100DBD499 /* FooterCollectionReusableView.m */; };
+		CD23843A1E110CAD00936609 /* IdentifierForReusable.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2384391E110CAD00936609 /* IdentifierForReusable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,6 @@
 		CD1B7B421DED72AD00DBD499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1B7B451DED72AD00DBD499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1B7B471DED72AD00DBD499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD1B7B4E1DED72DF00DBD499 /* IdentifierForReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentifierForReusable.h; sourceTree = "<group>"; };
-		CD1B7B4F1DED72DF00DBD499 /* IdentifierForReusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierForReusable.m; sourceTree = "<group>"; };
 		CD1B7B511DED731800DBD499 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		CD1B7B521DED731800DBD499 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		CD1B7B541DED732200DBD499 /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
@@ -55,6 +53,8 @@
 		CD1B7B6D1DED771700DBD499 /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		CD1B7B6F1DED772100DBD499 /* FooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterCollectionReusableView.h; sourceTree = "<group>"; };
 		CD1B7B701DED772100DBD499 /* FooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCollectionReusableView.m; sourceTree = "<group>"; };
+		CD2384381E110CAD00936609 /* IdentifierForReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentifierForReusable.h; sourceTree = "<group>"; };
+		CD2384391E110CAD00936609 /* IdentifierForReusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierForReusable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 		CD1B7B351DED72AD00DBD499 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				CD2384371E110CAD00936609 /* IdentifierForReusable */,
 				CD1B7B571DED733300DBD499 /* Test */,
-				CD1B7B4D1DED72DF00DBD499 /* IdentifierForReusable */,
 				CD1B7B391DED72AD00DBD499 /* AppDelegate.h */,
 				CD1B7B3A1DED72AD00DBD499 /* AppDelegate.m */,
 				CD1B7B3C1DED72AD00DBD499 /* ViewController.h */,
@@ -108,15 +108,6 @@
 				CD1B7B5B1DED746100DBD499 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CD1B7B4D1DED72DF00DBD499 /* IdentifierForReusable */ = {
-			isa = PBXGroup;
-			children = (
-				CD1B7B4E1DED72DF00DBD499 /* IdentifierForReusable.h */,
-				CD1B7B4F1DED72DF00DBD499 /* IdentifierForReusable.m */,
-			);
-			path = IdentifierForReusable;
 			sourceTree = "<group>";
 		};
 		CD1B7B571DED733300DBD499 /* Test */ = {
@@ -174,6 +165,16 @@
 				CD1B7B701DED772100DBD499 /* FooterCollectionReusableView.m */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		CD2384371E110CAD00936609 /* IdentifierForReusable */ = {
+			isa = PBXGroup;
+			children = (
+				CD2384381E110CAD00936609 /* IdentifierForReusable.h */,
+				CD2384391E110CAD00936609 /* IdentifierForReusable.m */,
+			);
+			name = IdentifierForReusable;
+			path = ../IdentifierForReusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +251,7 @@
 				CD1B7B711DED772100DBD499 /* FooterCollectionReusableView.m in Sources */,
 				CD1B7B6E1DED771700DBD499 /* HeaderCollectionReusableView.m in Sources */,
 				CD1B7B5E1DED76B500DBD499 /* RedTableViewCell.m in Sources */,
+				CD23843A1E110CAD00936609 /* IdentifierForReusable.m in Sources */,
 				CD1B7B641DED76DA00DBD499 /* SectionHeaderView.m in Sources */,
 				CD1B7B3E1DED72AD00DBD499 /* ViewController.m in Sources */,
 				CD1B7B3B1DED72AD00DBD499 /* AppDelegate.m in Sources */,
@@ -259,7 +261,6 @@
 				CD1B7B381DED72AD00DBD499 /* main.m in Sources */,
 				CD1B7B561DED732200DBD499 /* TestCollectionViewController.m in Sources */,
 				CD1B7B6B1DED76FD00DBD499 /* CollectionViewCell.m in Sources */,
-				CD1B7B501DED72DF00DBD499 /* IdentifierForReusable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
